@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff86a;
+  background-image:
+    radial-gradient(#0a0a0a 1.5px, transparent 1.5px),
+    radial-gradient(#0a0a0a 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  height: 380px;
+  background: #ffffff;
+  border: 4px solid #0a0a0a;
+  border-radius: 18px;
+  box-shadow: 10px 10px 0 #0a0a0a;
+  padding: 36px 28px;
+  text-align: center;
+  transform: rotate(-2deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.joke-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  background: #ff0066;
+  border: 3px solid #0a0a0a;
+  border-radius: 999px;
+  padding: 4px 16px;
+  transform: rotate(2deg);
+  margin-bottom: 20px;
+}
+
+.setup {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0a0a0a;
+  margin-bottom: 14px;
+}
+
+.punchline {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #02a6af;
+  margin-bottom: 28px;
+  filter: blur(7px);
+  opacity: 0.6;
+  user-select: none;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.punchline.revealed {
+  filter: blur(0);
+  opacity: 1;
+  user-select: text;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #0a0a0a;
+  border: 3px solid #0a0a0a;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #0a0a0a;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #0a0a0a;
+}
+
+.button:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 #0a0a0a;
+}
+
+.button-teal {
+  background: #02a6af;
+  color: #ffffff;
+}
+
+.button-pink {
+  background: #ff66cc;
+}
+
+#reveal-button {
+  width: 210px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .card {
+    height: 340px;
+    padding: 28px 20px;
+    transform: rotate(-1deg);
+  }
+
+  .setup,
+  .punchline {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    flex: 1 1 auto;
+    font-size: 0.85rem;
+    padding: 12px 14px;
+  }
+}
